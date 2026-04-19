@@ -35,8 +35,9 @@ public class TestForm {
         $("#subjectsInput").setValue("Arts").sendKeys(Keys.ENTER);
         $("#hobbies-checkbox-2").click();
         $("#currentAddress").setValue("СПб");
-        $("#react-select-3-input").setValue("NCR").sendKeys(Keys.ENTER);
-        $("#react-select-4-input").setValue("Delhi").sendKeys(Keys.ENTER);
+        $("#react-select-3-input").sendKeys("NCR" + Keys.ENTER);
+        $("#react-select-4-input").sendKeys("Delhi" + Keys.ENTER);
+        $("#uploadPicture").uploadFromClasspath("Снимок экрана 2025-06-03 231058.png");
         $("#submit").click();
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $$("tr").findBy(text("Student Name")).shouldHave(text("Влад Копылов"));
@@ -46,6 +47,7 @@ public class TestForm {
         $$("tr").findBy(text("Date of Birth")).shouldHave(text("12 September,2000"));
         $$("tr").findBy(text("Subjects")).shouldHave(text("Arts"));
         $$("tr").findBy(text("Hobbies")).shouldHave(text("Reading"));
+        $$("tr").findBy(text("Picture")).shouldHave(text("Снимок экрана 2025-06-03 231058.png"));
         $$("tr").findBy(text("Address")).shouldHave(text("СПб"));
         $$("tr").findBy(text("State and City")).shouldHave(text("NCR Delhi"));
     }
