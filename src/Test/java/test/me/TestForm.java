@@ -1,7 +1,6 @@
 package test.me;
 
 import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
@@ -14,12 +13,13 @@ public class TestForm {
     static void configure() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browser = "Chrome";
+        Configuration.holdBrowserOpen = false;
         Configuration.browserVersion = "114.0.5735.90";
         Configuration.browserSize = "1920x1080";
     }
 
     @Test
-void checkForm() {
+    void checkForm() {
         open("/automation-practice-form");
         $("#firstName").setValue("Влад");
         $("#lastName").setValue("Копылов");
@@ -49,3 +49,4 @@ void checkForm() {
         $$("tr").findBy(text("Address")).shouldHave(text("СПб"));
         $$("tr").findBy(text("State and City")).shouldHave(text("NCR Delhi"));
     }
+}
