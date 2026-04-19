@@ -1,9 +1,6 @@
 package test.me;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.lang.module.Configuration;
 
@@ -14,9 +11,24 @@ public class ExampleTest {
         System.out.println("BeforeAll");
     }
 
+    @BeforeEach
+    void beforeEach() {
+        System.out.println("BeforeEach");
+    }
+
     @Test
     void firstTest() {
-        System.out.println("Test");
+        System.out.println("Test1");
+    }
+
+    @Test
+    void secondTest() {
+        System.out.println("Test2");
+    }
+
+    @AfterEach
+    void afterEach() {
+        System.out.println("AfterEach");
     }
 
     @AfterAll
