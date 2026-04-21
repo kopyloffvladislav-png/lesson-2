@@ -2,8 +2,6 @@ package test.me;
 
 import org.junit.jupiter.api.*;
 
-import java.lang.module.Configuration;
-
 public class ExampleTest {
 
     @BeforeAll

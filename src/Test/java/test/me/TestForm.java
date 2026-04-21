@@ -20,7 +20,10 @@ public class TestForm {
 
     @Test
     void checkForm() {
+        //Открыть сайт
         open("/automation-practice-form");
+
+        // Заполнить все поля
         $("#firstName").setValue("Влад");
         $("#lastName").setValue("Копылов");
         $("#userEmail").setValue("kopyloff.vladislav@gmail.com");
@@ -38,7 +41,11 @@ public class TestForm {
         $("#react-select-3-input").sendKeys("NCR" + Keys.ENTER);
         $("#react-select-4-input").sendKeys("Delhi" + Keys.ENTER);
         $("#uploadPicture").uploadFromClasspath("Снимок экрана 2025-06-03 231058.png");
+
+        //Нажать кнопку "Submit"
         $("#submit").click();
+
+        //Проверить значения в полученной форме
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $$("tr").findBy(text("Student Name")).shouldHave(text("Влад Копылов"));
         $$("tr").findBy(text("Student Email")).shouldHave(text("kopyloff.vladislav@gmail.com"));

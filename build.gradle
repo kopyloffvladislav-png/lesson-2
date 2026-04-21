@@ -6,10 +6,18 @@ repositories {
     mavenCentral()
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 dependencies {
 testImplementation(
         'org.junit.jupiter:junit-jupiter:6.1.0-M1',
-        'com.codeborne:selenide:7.16.0',
+        'com.codeborne:selenide:7.16.0'
+)
+    testRuntimeOnly(
         'org.junit.platform:junit-platform-launcher',
         'org.slf4j:slf4j-simple:2.0.17'
 )

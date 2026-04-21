@@ -14,7 +14,7 @@ public class TestBox {
     static void configure() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browser = "Chrome";
-        Configuration.holdBrowserOpen = true;
+        Configuration.holdBrowserOpen = false;
         Configuration.browserVersion = "114.0.5735.90";
         Configuration.browserSize = "1920x1080";
     }
