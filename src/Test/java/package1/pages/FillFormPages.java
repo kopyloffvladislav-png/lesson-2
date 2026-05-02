@@ -55,8 +55,38 @@ public class FillFormPages {
         return this;
     }
 
+    public FillFormPages setSubjects(String value) {
+        $("#subjectsInput").setValue(value).pressEnter();
+        return this;
+    }
+
+    public FillFormPages setHobbie(String value) {
+        $("#hobbiesWrapper").$(byText(value)).click();
+        return this;
+    }
+
+    public FillFormPages setAddress(String value) {
+        $("#currentAddress").setValue(value);
+        return this;
+    }
+
     public FillFormPages setUserNumber(String value) {
         $("#userNumber").setValue(value);
+        return this;
+    }
+
+    public FillFormPages setCountry(String value) {
+        $("#react-select-3-input").setValue(value).pressEnter();
+        return this;
+    }
+
+    public FillFormPages setCity(String value) {
+        $("#react-select-4-input").setValue(value).pressEnter();
+        return this;
+    }
+
+    public FillFormPages setPicture() {
+        $("#uploadPicture").uploadFromClasspath("Снимок экрана 2025-06-03 231058.png");
         return this;
     }
 
