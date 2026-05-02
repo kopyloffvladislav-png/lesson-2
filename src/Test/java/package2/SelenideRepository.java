@@ -1,4 +1,5 @@
-package lesson3;
+package package2;
+import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -11,12 +12,15 @@ public class SelenideRepository {
         // Открыть github
         open("https://github.com/");
         // Ввести в поисковую строку selenide и нажать "Поиск"
-        $("[data-target='qbsearch-input.inputButton']").click();
+        SelenideElement searchButton = $("[data-target='qbsearch-input.inputButton']");
+        searchButton.click();
         $("#query-builder-test").setValue("selenide").pressEnter();
         // Нажать на линк от первого результата
         $$("div.List-module__List__fNMbL").first().$("a").click();
         // check: в заголовке встречается selenide.selenide
         $("#repository-container-header").shouldHave(text("selenide / selenide"));
+
+
     }
 
 
